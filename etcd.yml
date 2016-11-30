@@ -1,6 +1,0 @@
-- hosts: etcd
-  remote_user: vagrant
-  serial: 1
-  roles:
-    - common
-    - etcd

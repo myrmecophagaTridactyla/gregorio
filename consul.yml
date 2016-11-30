@@ -1,6 +1,0 @@
-- hosts: consul
-  remote_user: vagrant
-  serial: 1
-  roles:
-    - common
-    - consul
