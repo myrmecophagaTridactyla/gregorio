@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
     d.vm.network "private_network", ip: "10.100.198.200"
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
     d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/gDev.yml -c local"
-    d.vm.provision :shell, path "script/importCalc.sh"
+    d.vm.provision :shell, path: "script/importCalc.sh"
     d.vm.provider "virtualbox" do |v|
       v.memory = 2048
     end
