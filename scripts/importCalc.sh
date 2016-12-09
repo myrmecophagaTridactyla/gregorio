@@ -1,2 +1,2 @@
 git clone https://github.com/myrmecophagaTridactyla/calc
-cd calc
+sudo chown -R vagrant:vagrant /home/vagrant/calc
