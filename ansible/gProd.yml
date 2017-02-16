@@ -1,4 +1,4 @@
-- hosts: prod
+- hosts: gProd
   remote_user: vagrant
   serial: 1
   roles:
