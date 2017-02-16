@@ -1,0 +1,2 @@
+[prod]
+10.100.198.201 consul_extra="-server -bootstrap -ui"
