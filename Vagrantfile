@@ -42,6 +42,15 @@ Vagrant.configure(2) do |config|
       end
     end
   end
+#reverse proxy service  
+  config.vm.define "gProxy" do |d|
+    d.vm.box = "ubuntu/trusty64"
+    d.vm.hostname = "gProxy"
+    d.vm.network "private_network", ip: "10.100.193.200"
+    d.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+    end
+  end
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
   end
