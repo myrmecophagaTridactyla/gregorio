@@ -7,23 +7,39 @@ Vagrant.configure(2) do |config|
   else
     config.vm.synced_folder ".", "/vagrant"
   end
+#development environment
   config.vm.define "gDev" do |d|
     d.vm.box = "ubuntu/trusty64"
     d.vm.hostname = "gDev"
     d.vm.network "private_network", ip: "10.100.198.200"
+    #install ansible
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
+    #set up environent
     d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/gDev.yml -c local"
+    #check out calcApp code
     d.vm.provision :shell, path: "scripts/importCalc.sh"
     d.vm.provider "virtualbox" do |v|
       v.memory = 2048
     end
   end
+#production
   config.vm.define "gProd" do |d|
     d.vm.box = "ubuntu/trusty64"
     d.vm.hostname = "gProd"
     d.vm.network "private_network", ip: "10.100.198.201"
     d.vm.provider "virtualbox" do |v|
       v.memory = 1024
+    end
+  end
+#service discovery
+  (1..3).each do |i|
+    config.vm.define "gSvDisc0#{i}" do |d|
+      d.vm.box = "ubuntu/trusty64"
+      d.vm.hostname = "gSvDisc0#{i}"
+      d.vm.network "private_network", ip: "10.100.194.20#{i}"
+      d.vm.provider "virtualbox" do |v|
+        v.memory = 1024
+      end
     end
   end
   if Vagrant.has_plugin?("vagrant-cachier")
