@@ -1,8 +1,7 @@
 hosts: [
   { host_ip: "10.100.198.200", host_name: "gDev"},
   { host_ip: "10.100.198.201", host_name: "gProd"},
+  { host_ip: "10.100.194.201", host_name: "gSvDisc01"},
+  { host_ip: "10.100.194.202", host_name: "gSvDisc02"},
+  { host_ip: "10.100.194.203", host_name: "gSvDisc03"},
 ]
-
-obsolete_services:
-  - puppet
-  - chef-client
