@@ -6,3 +6,4 @@
     - docker
     - docker-compose
     - registry
+    - consul-template
