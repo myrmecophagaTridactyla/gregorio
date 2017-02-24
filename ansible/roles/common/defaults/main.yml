@@ -6,3 +6,7 @@ hosts: [
   { host_ip: "10.100.194.203", host_name: "gSvDisc03"},
   { host_ip: "10.100.193.200", host_name: "gProxy"},
 ]
+
+obsolete_services:
+  - puppet
+  - chef-client
