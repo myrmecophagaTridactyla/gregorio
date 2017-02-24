@@ -1,6 +1,13 @@
-- hosts: gProd
+
+- hosts: prod
   remote_user: vagrant
   serial: 1
   roles:
     - common
     - docker
+    - docker-compose
+    - consul
+    - registrator
+    - consul-template
+    - nginx
+    - service
