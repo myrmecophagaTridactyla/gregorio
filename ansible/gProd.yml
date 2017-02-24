@@ -1,4 +1,3 @@
-
 - hosts: prod
   remote_user: vagrant
   serial: 1
