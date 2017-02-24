@@ -1,6 +1,6 @@
 files: [
   {
-    src: "{{ repo_dir }}/docker-compose.yml",
+    src: "{{ repo_dir }}/docker-compose-prod.yml",
     dest: "/data/{{ service_name }}/docker-compose.yml"
   }, {
     src: "{{ repo_dir }}/nginx/nginx-includes.conf",
