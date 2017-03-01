@@ -1,7 +1,7 @@
 files: [
   {
     src: "{{ repo_dir }}/docker-compose-prod.yml",
-    dest: "/data/{{ service_name }}/docker-compose.yml"
+    dest: "/data/{{ service_name }}/docker-compose-prod.yml"
   }, {
     src: "{{ repo_dir }}/nginx/nginx-includes.conf",
     dest: "/data/nginx/includes/{{ service_name }}.conf"
