@@ -8,5 +8,5 @@
     - consul
     - registrator
     - consul-template
-    - nginx
+#    - nginx
 #    - service
