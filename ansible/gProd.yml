@@ -9,4 +9,4 @@
     - registrator
     - consul-template
     - nginx
-    - service
+#    - service
