@@ -70,6 +70,7 @@ Vagrant.configure(2) do |config|
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
     #set up environent
     d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/tfDev.yml -c local"
+    d.vm.provision :shell, path: "scripts/installTF.sh"
     #check out tf code
     d.vm.provision :shell, path: "scripts/importTF.sh"
     d.vm.provider "virtualbox" do |v|
