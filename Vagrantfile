@@ -59,4 +59,22 @@ Vagrant.configure(2) do |config|
     config.vbguest.no_install = true
     config.vbguest.no_remote = true
   end
+  ###############################################################################
+  ###############################################################################
+  #tf development environment
+  config.vm.define "tfDev" do |d|
+    d.vm.box = "ubuntu/trusty64"
+    d.vm.hostname = "tfDev"
+    d.vm.network "private_network", ip: "10.100.198.200"
+    #install ansible
+    d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"
+    #set up environent
+    d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant/ansible/tfDev.yml -c local"
+    #check out tf code
+    d.vm.provision :shell, path: "scripts/importTF.sh"
+    d.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+    end
+  end
+  
 end
