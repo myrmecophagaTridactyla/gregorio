@@ -5,6 +5,7 @@ hosts: [
   { host_ip: "10.100.194.202", host_name: "gSvDisc02"},
   { host_ip: "10.100.194.203", host_name: "gSvDisc03"},
   { host_ip: "10.100.193.200", host_name: "gProxy"},
+  { host_ip: "10.100.198.202", host_name: "tfDev"},
 ]
 
 obsolete_services:
