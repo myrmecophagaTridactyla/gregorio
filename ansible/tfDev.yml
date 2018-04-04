@@ -1,7 +1,7 @@
 - hosts: localhost
   remote_user: vagrant
   serial: 1
-    vars:
+  vars:
     - skip_ui: true
   roles:
     - docker
