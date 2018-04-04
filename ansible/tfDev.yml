@@ -4,5 +4,6 @@
   vars:
     - skip_ui: true
   roles:
+    - common
     - docker
     - docker-compose
